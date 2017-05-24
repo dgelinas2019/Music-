@@ -1,6 +1,5 @@
 #What does my name sound like?
 #mapping the characteristics in my name to components of music (pitch and duration) to hear what my name sounds like 
-#my name is a string 
 #comming up with a system that maps each character to a pitch 
 #my name consists of text data 
 #ascii table has  mapping, 33-124 for each letter,
@@ -13,10 +12,10 @@ from random import *
 name = "Danielle Gelinas"     #saving my name to a variable 
 vowels = "AEIOUYaeiouy"       #saving vowels and a space to variables 
 space = " " 
-phr = Phrase(0.0)  #map char to pitch, map char to duration in name 
+phr = Phrase(0.0)  #map char to pitch, duration, and velocity 
 for char in name:        
    ascii_val= ord(char)    #convert the letters in my name to numerical values
-   if char in vowels:        # if the letter is a vowel, the duration of the note will be longer and louder
+   if char in vowels:        # if char is a vowel, the duration of the note will be longer and louder
       pitch = ascii_val
       duration = HN
       velly = 127       #velly is the velocity/loudness of the note
@@ -25,10 +24,10 @@ for char in name:
       duration = WN
       velly = 0 
       
-   else:          #accounts what happens to the note if the letter in my name is a consonant 
-      pitch =ascii_val     #when the letter in my name is not a vowel, the duration of the note will be shorter and not as loud 
+   else:          #accounts what happens to the note if char is a consonant 
+      pitch =ascii_val     #when the letter in my name is not a vowel, the duration of the note will be shorter and softer 
       duration = QN
-      velly = randint(0,30)
+      velly = randint(0,30)      #The volume of the note will randomly range from 0 to 30.
    
    
    n = Note(pitch, duration,velly)     #creating the note that will play for each letter 
