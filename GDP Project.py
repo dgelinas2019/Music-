@@ -18,14 +18,14 @@ for i in text:
    GDPList.append(GDP)        #adding the integers (GDP) to empty GDPList
    Growth = float(column[2])  #converting the second column to floats (rate of growth)
    GrowthList.append(Growth)  #adding the floats (rate of growth) to empty GrowthList
-minGDP= min(GDPList)         #storing the value of the min and max of the GDPList and GrowthList to use later     
+minGDP= min(GDPList)         #storing the minimum and maximum values of the GDPList and GrowthList for later use      
 maxGDP = max(GDPList)
 minGrowth = min(GrowthList)
 maxGrowth = max(GrowthList)
 
 averageGDP = (sum(GDPList))/17      #calculating the average annual GDP between the years 2000 and 2016
 medianGrowthofGDP = (GrowthList[7]+GrowthList[8])/2      #calculating the median value of the growth of GDP between 2000 and 2016
-
+#Creating data structures 
 s = Score("Lets see", 120)    #Creating a score to store the musical parts, phrases, and notes
 IDKPart = Part("The computer decides the instrument", 3)    #Creating part IDKPart to store phrases
 phr = Phrase(0.0)       #Creating phrase phr to store notes 
@@ -35,12 +35,12 @@ for j in range(len(GDPList)):    #mapping the data of GDP stored in lists, GDPLi
    n = Note(pitch,duration)      #creating the note 
    phr.addNote(n)                #adding the note to the phrase
 tempo = mapValue(averageGDP,minGDP,maxGDP,60,180)     #Using summary statistics of data to set the tempo of the phrase
-phr.setTempo(tempo)                 #setting the tempo  
-instr = mapValue(medianGrowthofGDP, minGrowth,maxGrowth, 1,40) #using the summary statistic to set the instrument the phrase will play
+phr.setTempo(tempo)                 #setting the tempo of the phrase
+instr = mapValue(medianGrowthofGDP, minGrowth,maxGrowth, 1,40) #using the summary statistic to set the instrument of the phrase
 phr.setInstrument(instr)
 IDKPart.addPhrase(phr)        #adding the phrase to the Part
 
-#doing the same exact steps just with another text file containing data of Unemployment rates between the years 2000 and 2016
+#Doing the same exact steps as above with a different text file containing data of unemployment rates between the years 2000 and 2016
 text2 = open("Unemployment.txt",'r')
 UnemploymentList = []
 YearList = []
