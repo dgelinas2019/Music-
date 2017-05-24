@@ -1,10 +1,10 @@
 #If our countries economic well-being could be heard, what would it sound like?
 #Linking data from text files to components of music to hear what our economy "sounds" like  
-#Understanding how our country has grown throughout the twenty-first century on a new level 
+#Understanding how our country has grown throughout the twenty first century  
 #Creating a musical part or phrase based on data from a text file 
-#text files include data of anuual GDP per year, growth of GDP per year, and unemploymwnt rates between 2000 and 2016
+#text files include data of annual GDP (Gross Domestic Product) per year, growth of annual GDP per year, and unemploymwnt rates between 2000 and 2016
 #using atleast 1 summary statistic
-#avg, median,
+#avgerage and  median
 
 from music import *                
 text = open("GDP.txt",'r')          
